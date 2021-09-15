@@ -20,16 +20,11 @@ function SearchForm({ isChecked, onChangeCheckbox, onSubmit }) {
       <div className="search__container section__container">
         <form className="search__form" onSubmit={handleSubmit} required>
           <fieldset className="search__fieldset">
-            {/* <img
-              src={searchIcon}
-              alt="Иконка поиска"
-              className="search__icon"
-            /> */}
             <label className="search__label">
               <input
                 className="search__input"
                 type="text"
-                placeholder="Фильмы"
+                placeholder="Фильм"
                 name="search-keyword"
                 minLength="1"
                 maxLength="50"
