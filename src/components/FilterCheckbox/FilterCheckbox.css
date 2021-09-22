@@ -1,6 +1,7 @@
 .filter__label {
   display: flex;
-
+  align-items: center;
+  justify-content: center;
 }
 
 .filter__text {
@@ -8,6 +9,10 @@
   line-height: 18px;
   color: #ffffff;
   margin: 0 0 0 12px;
+}
+
+.filter__text_disabled {
+  opacity: 0.6;
 }
 
 .filter__checkbox {
@@ -19,6 +24,7 @@
   cursor: pointer;
   appearance: none;
   transition: background-color 0.2s ease-in-out;
+  box-sizing: border-box;
 }
 
 .filter__checkbox:checked {
@@ -44,6 +50,10 @@
 
 .filter__checkbox:checked::after {
   left: 18px;
+}
+
+.filter__checkbox:disabled {
+  opacity: 0.6;
 }
 
 @media (max-width: 600px) {

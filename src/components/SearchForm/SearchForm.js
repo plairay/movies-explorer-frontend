@@ -1,25 +1,27 @@
 import React from "react";
 
 import "./SearchForm.css";
+import searchIcon from "../../images/icons/search.svg";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 
-function SearchForm({ isChecked, onChangeCheckbox, onSubmit }) {
-  const [searchKeyWord, setSearchKeyWord] = React.useState("");
-
-  function handleChangeSearchKeyWord(e) {
-    setSearchKeyWord(e.target.value);
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    onSubmit(searchKeyWord);
-  }
-
+function SearchForm({
+  isChecked,
+  onChangeCheckbox,
+  onSubmit,
+  handleChange,
+  keyword,
+  isWasRequest,
+}) {
   return (
     <section className="search section">
       <div className="search__container section__container">
-        <form className="search__form" onSubmit={handleSubmit} required>
+        <form className="search__form" onSubmit={onSubmit} required>
           <fieldset className="search__fieldset">
+            <img
+              src={searchIcon}
+              alt="Иконка поиска"
+              className="search__icon"
+            />
             <label className="search__label">
               <input
                 className="search__input"
@@ -28,9 +30,8 @@ function SearchForm({ isChecked, onChangeCheckbox, onSubmit }) {
                 name="search-keyword"
                 minLength="1"
                 maxLength="50"
-                value={searchKeyWord}
-                onChange={handleChangeSearchKeyWord}
-                required
+                value={keyword}
+                onChange={handleChange}
               />
               <span className="search__input-error"></span>
             </label>
@@ -39,13 +40,14 @@ function SearchForm({ isChecked, onChangeCheckbox, onSubmit }) {
               type="submit"
               aria-label="Кнопка поиска"
             >
-              Поиск
+              <img src={searchIcon} alt="Поиск" className="search__btn-icon" />
             </button>
           </fieldset>
         </form>
         <FilterCheckbox
           isChecked={isChecked}
           onChange={onChangeCheckbox}
+          isWasRequest={isWasRequest}
         ></FilterCheckbox>
       </div>
     </section>

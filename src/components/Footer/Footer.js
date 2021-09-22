@@ -13,7 +13,7 @@ function Footer() {
         <ul className="footer__info-links">
           <li>
             <a
-              href="https://praktikum.yandex.ru/"
+              href="https://practicum.yandex.ru/web"
               className="footer__info-link"
               rel="noreferrer"
               target="_blank"
